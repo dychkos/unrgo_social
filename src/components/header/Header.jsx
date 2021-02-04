@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './header.module.css'
+import styles from './Header.module.css'
 
 console.log(styles)
 
@@ -7,7 +7,7 @@ console.log(styles)
 function Header(){
     return(
         <header className={styles.header}>
-        <div className="logo">
+        <div className={styles.logo}>
             <img src="https://img.icons8.com/flat_round/40/000000/share--v1.png"/>
         </div>
         <div className="name">

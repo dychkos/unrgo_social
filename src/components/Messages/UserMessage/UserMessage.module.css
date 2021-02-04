@@ -1,0 +1,16 @@
+.user{
+    padding: 10px;
+}
+
+
+.user a{
+    text-decoration: none;
+    color:#000;
+    transition: color 0.3s ease;
+
+}
+
+.user a.active{
+    color: #ff6a2d;
+
+}

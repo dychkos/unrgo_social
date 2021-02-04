@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './Sidebar.module.css'
 
 function Sidebar(){
@@ -7,10 +8,10 @@ function Sidebar(){
         <ul className={styles.navigation}>
           <li className={styles.item}>
             
-            <a href="#">Profile</a>
+            <NavLink to="/" activeClassName={styles.active}>Home</NavLink>
           </li>
           <li className={styles.item}>
-            <a href="#">Messages</a>
+            <NavLink to="/messages" activeClassName={styles.active}>Messages</NavLink>
           </li>
           <li className={styles.item}>
             <a href="#">Friends</a>

@@ -18,3 +18,9 @@ code {
     grid-template-columns: 150px 1fr;
 }
 
+      
+.content {
+    background-color: rgb(157, 157, 207);
+    height:max-content;
+    grid-area: content;
+}

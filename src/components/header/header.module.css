@@ -6,7 +6,13 @@
 }
 
 .name h1 {
+    padding-left: 25px;
     font-size: 28px;
     font-weight: 500;
     padding: 9px;
+}
+
+.logo{
+    margin-right: 20px;
+    margin-left: 15px;
 }

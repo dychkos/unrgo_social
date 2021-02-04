@@ -3,3 +3,25 @@
     background-color: cornflowerblue;
     grid-area: sidebar;
 }
+.navigation{
+    list-style-type: none;
+}
+
+.item a{
+    color:#fff;
+    font-size: 18px;
+    margin-bottom:6px;
+
+}
+.item a:hover{
+    color:rgb(235, 255, 119);
+    letter-spacing: 1px;
+}
+
+.item a {
+    text-decoration: none;
+}
+
+.item a.active{
+    color:gold;
+}

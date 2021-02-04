@@ -1,0 +1,11 @@
+.messages {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    margin: 15px;
+}
+.dialogs{
+    background-color: #7dff8f;
+}
+.users{
+    background-color: #89dffd;
+}
