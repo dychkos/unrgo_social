@@ -8,13 +8,13 @@ function Sidebar(){
         <ul className={styles.navigation}>
           <li className={styles.item}>
             
-            <NavLink to="/" activeClassName={styles.active}>Home</NavLink>
+            <NavLink to="/profile" activeClassName={styles.active}>Home</NavLink>
           </li>
           <li className={styles.item}>
             <NavLink to="/messages" activeClassName={styles.active}>Messages</NavLink>
           </li>
           <li className={styles.item}>
-            <a href="#">Friends</a>
+              <NavLink to="/users" activeClassName={styles.active}>Friends</NavLink>
           </li>
           <li className={styles.item}>
             <a href="#">Settings</a>

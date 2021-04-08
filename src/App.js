@@ -1,32 +1,53 @@
 import React from 'react';
-import Content from './components/content/Home';
-import Header from './components/Header/Header'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Login from './components/Login/Login'
+import {BrowserRouter as Router, Route, Switch, withRouter} from 'react-router-dom'
 import Sidebar from './components/sidebar/Sidebar';
-import Home from './components/content/Home'
-import Messages from './components/Messages/Messages'
+import MessagesContainer from "./components/Messages/MessagesContainer";
+import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/content/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
+import {connect} from "react-redux";
+import {getAuthUser} from "./redux/authReducer";
+import {compose} from "redux";
+import {initializeApp} from "./redux/appReducer";
+import Loader from "./components/common/Loader";
 
 
-function App(props) {
+class App extends React.Component {
+    componentDidMount() {
+        this.props.initializeApp();
 
-    return (
-        <Router>
-            <div className="wrapper">
-                <Header/>
-                <Sidebar/>
-                <div className="content">
-                    <Switch>
+    }
 
-                        <Route path="/" exact render={( () => <Home addPost={props.addPost} updateNewPostText={props.updateNewPostText} posts={props.state.profilePage.posts} newPostText={props.state.profilePage.newPostText}/>)}/>
-                        <Route path="/messages" render={( () => <Messages dialogs={props.state.messagesPage}/> )}/>
-                    </Switch>
-
-
+    render() {
+        if(!this.props.initialized){
+            return <Loader/>
+        }
+        return (
+            <Router>
+                <div className="wrapper">
+                    <HeaderContainer/>
+                    <Sidebar/>
+                    <div className="content">
+                        <Switch>
+                            <Route path="/profile/:userId?"
+                                   render={( () => <ProfileContainer store={this.props.store}/>)}/>
+                            <Route path="/messages"
+                                   render={( () => <MessagesContainer store={this.props.store}/> )}/>
+                            <Route path="/users"
+                                   render={( () => <UsersContainer/> )}/>
+                            <Route path="/login"
+                                   render={( () => <Login/> )}/>
+                        </Switch>
+                    </div>
                 </div>
-
-            </div>
-        </Router>
-    );
+            </Router>
+        );
+    }
 }
 
-export default App;
+const mapStateToProps = (state)=>({initialized:state.app.initialized})
+export default compose(
+
+    connect(mapStateToProps,{initializeApp}))(App);
+

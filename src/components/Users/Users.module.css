@@ -1,0 +1,73 @@
+.users{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    background-color: #e4e0ff;
+}
+
+.col1{
+    flex: 1 1 15%;
+}
+
+.col2{
+    flex:1 1 70%;
+}
+.col3{
+    flex:1 1 15%;
+}
+
+.fullname{
+    font-size: 18px;
+    font-weight: 900;
+}
+.city{
+    font-size: 15px;
+    font-weight: 900;
+}
+.country{
+    font-size: 12px;
+
+}
+.btn:focus{
+    outline: none;
+}
+.btn{
+    margin-top: 8px;
+    min-height: 30px;
+    color:white;
+    width: 100px;
+    padding:6px 10px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+}
+.btn.follow{
+    background-color: #191;
+}
+.btn.unfollow{
+    background-color: darkred;
+}
+.btn:hover{
+    background-color: #191a29;
+    color:white;
+}
+.avatar{
+    width: 80px;
+    height: 80px;
+}
+.pagination{
+    padding: 12px 240px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+}
+.pagination span {
+    cursor: pointer;
+}
+.currentPage{
+    font-weight: 900;
+    color:gold;
+}

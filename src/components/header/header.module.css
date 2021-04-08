@@ -3,16 +3,28 @@
     grid-area: header;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .name h1 {
     padding-left: 25px;
     font-size: 28px;
     font-weight: 500;
-    padding: 9px;
+    margin: 10px;
 }
 
 .logo{
     margin-right: 20px;
     margin-left: 15px;
+}
+.login{
+    align-content: flex-end;
+}
+.login-text{
+    color:white;
+}
+.login_user_text{
+    color:white;
+    margin:12px;
+    font-size:20px;
 }
